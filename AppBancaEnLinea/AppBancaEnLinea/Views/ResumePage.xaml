@@ -4,9 +4,16 @@
              x:Class="AppBancaEnLinea.Views.TestPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin!"
+            <Label Text="Por motivos de seguridad, vuelva a iniciar la sesión."
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button Text="Volver" 
+                        BorderColor="Navy" 
+                        BackgroundColor="Navy" 
+                        TextColor="Silver" 
+                        CornerRadius="10"
+                        Clicked="Resume">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

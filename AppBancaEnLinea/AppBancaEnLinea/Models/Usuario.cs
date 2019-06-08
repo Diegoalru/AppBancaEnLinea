@@ -30,9 +30,9 @@ namespace AppBancaEnLinea.Models
         /*
          * FALTA ATRIBUTO
          */
-        public SecurityToken Token { get; set; }
-        [MaxLength(250)]
-        public string TOKEN { get; set; }
+        //public SecurityToken Token { get; set; }
+        //[MaxLength(250)]
+        //public string TOKEN { get; set; }
 
         public Usuario()
         {

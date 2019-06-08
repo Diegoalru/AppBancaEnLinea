@@ -6,15 +6,20 @@
         <ScrollView>
             <StackLayout Orientation="Vertical"
                          HorizontalOptions="Fill" 
-                         VerticalOptions="Center">
+                         VerticalOptions="Center"
+                         Padding="30">
                     <Label Text="Bienvenido a Banco ULACIT" 
                             HorizontalOptions="Center">
                 </Label>
-                <Entry Placeholder="Username" 
-                       HorizontalOptions="Center">
+                <Entry x:Name="Txt_Username"
+                    Placeholder="Username" 
+                    HorizontalOptions="Center">
                 </Entry>
-                <Entry Placeholder="Password" 
-                       HorizontalOptions="Center">
+                <Entry 
+                    x:Name="Txt_Password"
+                    IsPassword="True"
+                    Placeholder="Password" 
+                    HorizontalOptions="Center">
                 </Entry>
                 <Button Text="Iniciar Sesion" 
                         BorderColor="Navy" 

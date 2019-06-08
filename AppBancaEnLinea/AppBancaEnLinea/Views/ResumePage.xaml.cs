@@ -16,5 +16,10 @@ namespace AppBancaEnLinea.Views
         {
             InitializeComponent();
         }
+
+        private void Resume(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new LoginPage();
+        }
     }
 }
