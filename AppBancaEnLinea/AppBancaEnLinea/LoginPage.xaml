@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLinea.LoginPage" BackgroundColor="Silver">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="Fill" 
+                         VerticalOptions="Center">
+                    <Label Text="Bienvenido a Banco ULACIT" 
+                            HorizontalOptions="Center">
+                </Label>
+                <Entry Placeholder="Username" 
+                       HorizontalOptions="Center">
+                </Entry>
+                <Entry Placeholder="Password" 
+                       HorizontalOptions="Center">
+                </Entry>
+                <Button Text="Iniciar Sesion" 
+                        BorderColor="Navy" 
+                        BackgroundColor="Navy" 
+                        TextColor="Silver" 
+                        CornerRadius="10"
+                        Clicked="Login">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
