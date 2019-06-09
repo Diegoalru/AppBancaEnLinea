@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancaEnLinea.Views.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppBancaEnLinea.Views.MainPage">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView x:Name="CuentasList"
-                      BackgroundColor="White"
-                      Grid.Row="4"
-                      SeparatorVisibility="Default">
+        <StackLayout HorizontalOptions="Center" Padding="30">
+            <Button Text="Agregar Cuenta" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
+                Clicked="Btn_CargarCuentas">
+            </Button>
+            <Button Text="Actualizar" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
+                Clicked="Btn_RefrescarPantalla">
+            </Button>
+            <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
                             <StackLayout Padding="5">
-                                <Label Text="{Binding CUE_DESCRIPCION}">
-                                </Label>
+                                <Label Text="{Binding CUE_DESCRIPCION, StringFormat='Descripción: {0:N}'}" />
+                                <Label Text="{Binding CUE_MONEDA, StringFormat='Moneda: {0:N}'}" />
+                                <Label Text="{Binding CUE_SALDO, StringFormat='Saldo: {0:N}'}" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
