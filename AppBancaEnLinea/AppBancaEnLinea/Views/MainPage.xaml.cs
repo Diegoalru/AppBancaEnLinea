@@ -28,7 +28,30 @@ namespace AppBancaEnLinea.Views
             RefrescarPantalla();
         }
 
-        private void Btn_CargarCuentas(object sender, EventArgs e)
+        private void RefrescarPantalla()
+        {
+            CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
+        }
+
+        private void Btn_RefrescarPantalla(object sender, EventArgs e)
+        {
+            CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
+        }
+
+        public void AgregarTapped(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new CuentaPage();
+        }
+
+        public void CerrarTapped(object sender, EventArgs e)
+        {
+            DisplayAlert("Cerrar Sesión", "Cerrando sesión.", "OK");
+            Application.Current.MainPage = new LoginPage();
+        }
+
+        #region Deprecated
+        [System.Obsolete("Metodo usado para insetar una cuenta ya establecida", false)]
+        private void Btn_AgregarCuentaDefault(object sender, EventArgs e)
         {
             Cuenta cuenta = new Cuenta
             {
@@ -44,16 +67,7 @@ namespace AppBancaEnLinea.Views
             DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK", "Cancel");
             CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
         }
-
-        private void Btn_RefrescarPantalla(object sender, EventArgs e)
-        {
-            CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
-        }
-
-        private void RefrescarPantalla()
-        {
-            CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
-        }
+        #endregion
     }
 }
 

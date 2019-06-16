@@ -3,25 +3,67 @@
     x:Class="AppBancaEnLinea.Views.MainPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
+            
+            <!--
             <Button Text="Agregar Cuenta" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
-                Clicked="Btn_CargarCuentas">
+                Clicked="Btn_AgregarCuentaDefault">
             </Button>
-            <Button Text="Actualizar" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
-                Clicked="Btn_RefrescarPantalla">
+            -->
+            
+            <Button Text="Actualizar"
+                    BorderColor="Navy" 
+                    BackgroundColor="Navy" 
+                    TextColor="Silver" 
+                    CornerRadius="10"
+                    Clicked="Btn_RefrescarPantalla"
+                    Margin="40, 0"> 
             </Button>
             <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
                             <StackLayout Padding="5">
+                                <Label Text="{Binding CUE_DESCRIPCION_label}"></Label>
+                                <!--
                                 <Label Text="{Binding CUE_DESCRIPCION, StringFormat='Descripción: {0:N}'}" />
                                 <Label Text="{Binding CUE_MONEDA, StringFormat='Moneda: {0:N}'}" />
                                 <Label Text="{Binding CUE_SALDO, StringFormat='Saldo: {0:N}'}" />
+                                -->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button x:Name="Btn_Agregar"
+                    Text="Agregar"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    HorizontalOptions="Fill"
+                    CornerRadius="10"
+                    Clicked="AgregarTapped">
+            </Button>
+            <Button x:Name="Btn_Modifcar" 
+                    Text="Modificar"
+                    TextColor="White" 
+                    BackgroundColor="Navy"
+                    CornerRadius="10"
+                    HorizontalOptions="Fill">
+            </Button>
+            <Button x:Name="Btn_Eliminar"
+                    Text="Eliminar"
+                    TextColor="White"
+                    BackgroundColor="Gray"
+                    CornerRadius="10"
+                    HorizontalOptions="Fill">
+            </Button>
+            <Button x:Name="Btn_CerrarSesion"
+                    Text="Cerrar Sesión"
+                    TextColor="White"
+                    BackgroundColor="Maroon"
+                    HorizontalOptions="Fill"
+                    CornerRadius="10"
+                    Clicked="CerrarTapped">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
