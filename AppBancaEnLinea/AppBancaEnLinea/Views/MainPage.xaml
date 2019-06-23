@@ -3,13 +3,9 @@
     x:Class="AppBancaEnLinea.Views.MainPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
-            
-            <!--
             <Button Text="Agregar Cuenta" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
                 Clicked="Btn_AgregarCuentaDefault">
             </Button>
-            -->
-            
             <Button Text="Actualizar"
                     BorderColor="Navy" 
                     BackgroundColor="Navy" 
@@ -54,7 +50,16 @@
                     TextColor="White"
                     BackgroundColor="Gray"
                     CornerRadius="10"
-                    HorizontalOptions="Fill">
+                    HorizontalOptions="Fill"
+                    Clicked="EliminarTapped">
+            </Button>
+            <Button x:Name="Btn_pagos"
+                    Text="Pagar Servicios"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    CornerRadius="10"
+                    HorizontalOptions="Fill"
+                    Clicked="PagarTapped">
             </Button>
             <Button x:Name="Btn_CerrarSesion"
                     Text="Cerrar Sesión"
@@ -62,7 +67,7 @@
                     BackgroundColor="Maroon"
                     HorizontalOptions="Fill"
                     CornerRadius="10"
-                    Clicked="CerrarTapped">
+                    Clicked="CerrarSesionTapped">
             </Button>
         </StackLayout>
     </ContentPage.Content>
