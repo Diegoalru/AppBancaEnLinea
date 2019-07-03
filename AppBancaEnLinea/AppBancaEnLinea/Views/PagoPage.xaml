@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancaEnLinea.Views.PagoPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Padding="30" VerticalOptions="Center">
             <Entry  x:Name="Txt_Codigo"
                     Placeholder="Ingrese Codigo"
                     HorizontalOptions="Fill"
@@ -38,9 +38,12 @@
                     TextColor="White"
                     BackgroundColor="Teal">
             </Button>
-            <Button Text="Regresar"
-                    TextColor="White"
-                    BackgroundColor="Teal">
+            <Button 
+                x:Name="Btn_Volver"
+                Text="Regresar"
+                TextColor="White"
+                BackgroundColor="Teal"
+                Clicked="Btn_Volver_Clicked">
             </Button>
         </StackLayout>
     </ContentPage.Content>

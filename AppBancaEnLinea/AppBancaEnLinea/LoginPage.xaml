@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-  xmlns="http://xamarin.com/schemas/2014/forms"
-  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-  x:Class="AppBancaEnLinea.LoginPage"
-  BackgroundColor="Silver"
->
-  <ContentPage.Content>
-    <ScrollView>
-      <StackLayout
-        Orientation="Vertical"
-        HorizontalOptions="Fill"
-        VerticalOptions="Center"
-        Padding="30"
-      >
-        <Label
-          Text="Bienvenido a Banco ULACIT"
-          HorizontalOptions="Center"
-        ></Label>
-        <Entry
-          x:Name="Txt_Username"
-          Placeholder="Username"
-          HorizontalOptions="Center"
-        >
-        </Entry>
-        <Entry
-          x:Name="Txt_Password"
-          IsPassword="True"
-          Placeholder="Password"
-          HorizontalOptions="Center"
-        >
-        </Entry>
-        <Button
-          Text="Iniciar Sesion"
-          BorderColor="Navy"
-          BackgroundColor="Navy"
-          TextColor="Silver"
-          CornerRadius="10"
-          Clicked="Login"
-        >
-        </Button>
-      </StackLayout>
-    </ScrollView>
-  </ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AppBancaEnLinea.LoginPage" 
+             BackgroundColor="Silver">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" 
+                         HorizontalOptions="Fill" 
+                         VerticalOptions="Center" 
+                         Padding="30">
+                <Label Text="Bienvenido a Banco ULACIT" 
+                       HorizontalOptions="Center"></Label>
+                <Entry x:Name="Txt_Username" 
+                       Placeholder="Username" 
+                       HorizontalOptions="Center"></Entry>
+                <Entry x:Name="Txt_Password" 
+                       IsPassword="True" 
+                       Placeholder="Password" 
+                       HorizontalOptions="Center"></Entry>
+                <Button x:Name="Btn_Login" 
+                        Text="Iniciar Sesion" 
+                        BorderColor="Navy" 
+                        BackgroundColor="Navy" 
+                        TextColor="Silver" 
+                        CornerRadius="10" 
+                        Clicked="Login"></Button>
+                <Button x:Name="Btn_Register" 
+                        Text="Registrarse" 
+                        BorderColor="Navy"
+                        BackgroundColor="Navy" 
+                        TextColor="Silver"
+                        CornerRadius="10" 
+                        Clicked="Btn_Register_Clicked"></Button>
+                <!--<Button x:Name="Btn_Agregar" 
+                        Text="Agregar Usuario" 
+                        BorderColor="Navy" 
+                        BackgroundColor="Navy" 
+                        TextColor="Silver"
+                        CornerRadius="10" 
+                        Clicked="Btn_Agregar_Clicked"></Button>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>

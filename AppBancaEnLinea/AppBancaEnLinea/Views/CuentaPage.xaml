@@ -23,7 +23,6 @@
                     <x:String>EUROS</x:String>
                 </Picker.Items>
             </Picker>
-            
             <Entry x:Name="Txt_Saldo"
                    Placeholder="Ingrese el saldo"
                    HorizontalTextAlignment="Center"
@@ -39,10 +38,16 @@
                 </Picker.Items>
             </Picker>
 
-            <Button Text="Agregar"
+            <Button x:Name="Btn_Agregar"
+                    Text="Agregar"
                     TextColor="White"
                     BackgroundColor="Teal"
                     Clicked="AgregarTapped"></Button>
+            <Button x:Name="Btn_Modificar"
+                    Text="Modificar"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    Clicked="ActualizarTapped"></Button>
             <Button Text="Regresar"
                     TextColor="White"
                     BackgroundColor="Teal"

@@ -11,21 +11,26 @@ namespace AppBancaEnLinea.Models
     {
         [PrimaryKey, AutoIncrement]
         public int USU_CODIGO { get; set; }
+
         [MaxLength(250)]
         public string USU_IDENTIFICACION { get; set; }
+
         [MaxLength(250)]
         public string USU_NOMBRE { get; set; }
+
         [MaxLength(250)]
         public string USU_USERNAME { get; set; }
+
         [MaxLength(250)]
         public string USU_PASSWORD { get; set; }
+
         [MaxLength(250)]
         public string USU_EMAIL { get; set; }
         /*
          * FALTA ATRIBUTO
          */
         public DateTime USU_FEC_NAC { get; set; }
-        [MaxLength(250)]
+        [MaxLength(1)]
         public string USU_ESTADO { get; set; }
         /*
          * FALTA ATRIBUTO
@@ -34,9 +39,12 @@ namespace AppBancaEnLinea.Models
         //[MaxLength(250)]
         //public string TOKEN { get; set; }
 
+        #region Constructores
         public Usuario()
-        {
+        {}
 
-        }
+        public Usuario(int code, string user)
+        { this.USU_CODIGO = code; this.USU_USERNAME = user; }
+        #endregion
     }
 }

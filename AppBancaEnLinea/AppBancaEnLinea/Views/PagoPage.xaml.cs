@@ -22,7 +22,11 @@ namespace AppBancaEnLinea.Views
         {
             Pkr_Cuentas.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
             Pkr_Servicios.ItemsSource = App.repositorioServicio.ObtenerServicios();
-
         }
-	}
+
+        private void Btn_Volver_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new MainPage();
+        }
+    }
 }

@@ -3,6 +3,7 @@
     x:Class="AppBancaEnLinea.Views.MainPage">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
+            <Label x:Name="Lbl_Username" Text="" HorizontalOptions="End"></Label>
             <Button Text="Agregar Cuenta" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
                 Clicked="Btn_AgregarCuentaDefault">
             </Button>
@@ -43,7 +44,8 @@
                     TextColor="White" 
                     BackgroundColor="Navy"
                     CornerRadius="10"
-                    HorizontalOptions="Fill">
+                    HorizontalOptions="Fill"
+                    Clicked="ModificarTapped">
             </Button>
             <Button x:Name="Btn_Eliminar"
                     Text="Eliminar"

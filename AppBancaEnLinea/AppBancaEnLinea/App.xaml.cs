@@ -18,7 +18,7 @@ namespace AppBancaEnLinea
             InitializeComponent();
         }
 
-        public App(string ruta)
+        public App(string ruta) 
         {
             InitializeComponent();
 
@@ -46,6 +46,7 @@ namespace AppBancaEnLinea
         protected override void OnResume()
         {
             MainPage = new Views.TestPage();
+            App.repositorioUsuario.SetUser(null);
         }
     }
 }

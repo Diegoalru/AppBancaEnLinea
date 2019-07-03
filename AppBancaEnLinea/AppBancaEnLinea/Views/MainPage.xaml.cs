@@ -25,7 +25,14 @@ namespace AppBancaEnLinea.Views
         {
             InitializeComponent();
             RefrescarPantalla();
+            CargaUser();
             //CrearServicios();
+        }
+
+        public void CargaUser()
+        {
+            string user = App.repositorioUsuario.GetUsuario().USU_USERNAME;
+            Lbl_Username.Text = "Usuario: " + user;
         }
 
         /// <summary>
@@ -35,6 +42,8 @@ namespace AppBancaEnLinea.Views
         {
             CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
         }
+
+        #region Cuentas
 
         /// <summary>
         /// Metodo usado por el botón "Actualizar", que actualiza los datos de la lista que se muestra en la pantalla.
@@ -63,6 +72,7 @@ namespace AppBancaEnLinea.Views
                 if(respuesta)
                 {
                     Application.Current.MainPage = new LoginPage();
+                    App.repositorioUsuario.SetUser(null);
                 }
             }
             catch(Exception ex)
@@ -95,6 +105,16 @@ namespace AppBancaEnLinea.Views
             }
         }
 
+        private void ModificarTapped(object sender, EventArgs e)
+        {
+            Cuenta cuenta = (Cuenta) CuentasList.SelectedItem;
+            if(cuenta != null)
+                Application.Current.MainPage = new CuentaPage(cuenta);
+            else
+                DisplayAlert("Advertencia", "Si desea modificar una cuenta, debes seleccionarla primero.", "OK");
+        }
+        #endregion
+
         #region Pagos
 
         /// <summary>
@@ -124,13 +144,14 @@ namespace AppBancaEnLinea.Views
             };
 
             App.repositorioCuenta.AgregarCuenta(cuenta);
-            DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK", "Cancel");
-            CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
+            DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK");
+            RefrescarPantalla();
         }
 
         /// <summary>
         /// Agrega varios servicios.
         /// </summary>
+        [System.Obsolete("Metodo usado para agregar servicios predeterminados.", true)]
         public void CrearServicios()
         {
             Servicio servicioAYA = new Servicio()

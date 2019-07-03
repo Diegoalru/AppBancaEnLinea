@@ -10,7 +10,18 @@ namespace AppBancaEnLinea.Data
         #region Variables
         private readonly SQLiteConnection connection;
         public string StatusMessage { get; set; }
+        private Usuario usuario;
         #endregion
+
+        public void SetUser(Usuario usuario)
+        {
+            this.usuario = usuario;
+        }
+
+        public Usuario GetUsuario()
+        {
+            return this.usuario;
+        }
 
         /// <summary>
         /// Constructor de la clase.
