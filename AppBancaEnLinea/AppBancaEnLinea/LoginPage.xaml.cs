@@ -28,7 +28,7 @@ namespace AppBancaEnLinea
         private void Login(object sender, EventArgs e)
         {
             //Guardamos los campos
-            string Username = Txt_Username.Text;
+            string Username = Txt_Username.Text.ToUpper();
             string Password = Txt_Password.Text;
 
             //Verificamos el Formulario.
@@ -64,7 +64,6 @@ namespace AppBancaEnLinea
                 DisplayAlert("Validación de ingreso.", "Debes proporcionar los datos solicitados.", "OK");
             }
         }
-
         
         private bool VerificaCredenciales(string user, string pass)
         {
@@ -88,8 +87,8 @@ namespace AppBancaEnLinea
                 {
                     if (item.USU_USERNAME.Equals(username) && item.USU_PASSWORD.Equals(password))
                     {
-                        existe = true;
                         App.repositorioUsuario.SetUser(new Usuario(item.USU_CODIGO, item.USU_USERNAME));
+                        return true;
                     }
                     else
                     {
@@ -104,8 +103,6 @@ namespace AppBancaEnLinea
                 return false;
             }
         }
-
-
 
         /// <summary>
         /// Verifica que se encuentren los datos necesarios para iniciar sesión.
@@ -144,7 +141,7 @@ namespace AppBancaEnLinea
         }
 
         #region Deprecated
-        [System.Obsolete("Metodo Obsoleto. Usarlo solo para agregar una cuenta predeterminada.", false)]
+        [System.Obsolete("Metodo Obsoleto. Usarlo solo para agregar una cuenta predeterminada.", true)]
         private void Btn_Agregar_Clicked(object sender, EventArgs e)
         {
             AgregarUsuarioDefault();

@@ -50,8 +50,17 @@ namespace AppBancaEnLinea.Models
         }
         #endregion
 
+        #region Constructor
         public Cuenta()
         { }
+        #endregion
+
+        #region Metodos
+        public override string ToString()
+        {
+            return string.Format("Cuenta:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}", CUE_DESCRIPCION, CUE_MONEDA, CUE_SALDO, CUE_ESTADO);
+        }
+        #endregion
 
     }
 }

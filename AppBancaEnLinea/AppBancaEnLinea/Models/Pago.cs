@@ -20,6 +20,9 @@ namespace AppBancaEnLinea.Models
 
         public DateTime PAG_FECHA { get; set; }
 
+        [MaxLength(3)]
+        public string PAG_MONEDA { get; set; }
+
         [MaxLength(12)]
         public decimal PAG_MONTO { get; set; }
         #endregion
@@ -28,6 +31,5 @@ namespace AppBancaEnLinea.Models
         {
 
         }
-
     }
 }

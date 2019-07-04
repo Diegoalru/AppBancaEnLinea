@@ -21,11 +21,6 @@
                         <ViewCell Height="30">
                             <StackLayout Padding="5">
                                 <Label Text="{Binding CUE_DESCRIPCION_label}"></Label>
-                                <!--
-                                <Label Text="{Binding CUE_DESCRIPCION, StringFormat='Descripción: {0:N}'}" />
-                                <Label Text="{Binding CUE_MONEDA, StringFormat='Moneda: {0:N}'}" />
-                                <Label Text="{Binding CUE_SALDO, StringFormat='Saldo: {0:N}'}" />
-                                -->
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

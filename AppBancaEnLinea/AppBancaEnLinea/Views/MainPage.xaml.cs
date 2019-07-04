@@ -24,8 +24,8 @@ namespace AppBancaEnLinea.Views
         public MainPage()
         {
             InitializeComponent();
-            RefrescarPantalla();
-            CargaUser();
+            RefrescarPantalla();//Muestra los datos en la lista
+            CargaUser();//Muestra en un label el Usuario.
             //CrearServicios();
         }
 
@@ -40,7 +40,22 @@ namespace AppBancaEnLinea.Views
         /// </summary>
         private void RefrescarPantalla()
         {
-            CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
+            try
+            {
+                List<Cuenta> dataList = new List<Cuenta>();
+                foreach (var item in App.repositorioCuenta.ObtenerCuentas())
+                {
+                    if (item.USU_CODIGO == App.repositorioUsuario.GetUsuario().USU_CODIGO)
+                    {
+                        dataList.Add(item);
+                    }
+                }
+                CuentasList.ItemsSource = dataList;
+            }
+            catch (Exception)
+            {
+                DisplayAlert("Cuenta", "Tu usuario no posee cuentas", "OK");
+            }
         }
 
         #region Cuentas
@@ -50,7 +65,7 @@ namespace AppBancaEnLinea.Views
         /// </summary>
         private void Btn_RefrescarPantalla(object sender, EventArgs e)
         {
-            CuentasList.ItemsSource = App.repositorioCuenta.ObtenerCuentas();
+            RefrescarPantalla();
         }
 
         /// <summary>
@@ -91,7 +106,6 @@ namespace AppBancaEnLinea.Views
                 Cuenta cuenta = (Cuenta) CuentasList.SelectedItem;
                 bool respuesta = await DisplayAlert("Advertencia", "Desea eliminar la cuenta " + cuenta.CUE_CODIGO + ".", "OK", "Cancelar");
                 if (respuesta)
-
                 {
                     App.repositorioCuenta.EliminarCuenta(cuenta);
                     await DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK");
@@ -136,7 +150,7 @@ namespace AppBancaEnLinea.Views
             Cuenta cuenta = new Cuenta
             {
                 CUE_CODIGO = 1,
-                USU_CODIGO = 1,
+                USU_CODIGO = App.repositorioUsuario.GetUsuario().USU_CODIGO,
                 CUE_DESCRIPCION = "AHORRO",
                 CUE_MONEDA = "COL",
                 CUE_ESTADO = "A",
@@ -150,8 +164,8 @@ namespace AppBancaEnLinea.Views
 
         /// <summary>
         /// Agrega varios servicios.
-        /// </summary>
-        [System.Obsolete("Metodo usado para agregar servicios predeterminados.", true)]
+        /// </summary> 
+        [System.Obsolete("Metodo usado para agregar servicios predeterminados.", false)]
         public void CrearServicios()
         {
             Servicio servicioAYA = new Servicio()

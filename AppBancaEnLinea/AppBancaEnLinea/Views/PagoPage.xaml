@@ -4,12 +4,6 @@
              x:Class="AppBancaEnLinea.Views.PagoPage">
     <ContentPage.Content>
         <StackLayout Padding="30" VerticalOptions="Center">
-            <Entry  x:Name="Txt_Codigo"
-                    Placeholder="Ingrese Codigo"
-                    HorizontalOptions="Fill"
-                    HorizontalTextAlignment="Center"
-                    FontSize="Small">
-            </Entry>
             <Picker x:Name="Pkr_Servicios"
                     Title="Seleccione un servicio"
                     FontSize="Small"
@@ -20,23 +14,27 @@
                     FontSize="Small"
                     ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}">
             </Picker>
-            <Entry  x:Name="Txt_Monto"
-                    Placeholder="Ingrese el monto"
-                    HorizontalOptions="Fill"
-                    HorizontalTextAlignment="Center"
-                    FontSize="Small">
+            <Entry  
+                x:Name="Txt_Monto"
+                Placeholder="Ingrese el monto"
+                HorizontalOptions="Fill"
+                Keyboard="Telephone"
+                HorizontalTextAlignment="Center"
+                FontSize="Small">
             </Entry>
-            <!--
-            <Entry  x:Name="Txt_Codigo"
-                    Placeholder="Ingrese Codigo"
-                    HorizontalOptions="Fill"
-                    HorizontalTextAlignment="Center"
-                    FontSize="Small">
-            </Entry>
-            -->
-            <Button Text="Pagar"
-                    TextColor="White"
-                    BackgroundColor="Teal">
+            <Label
+                x:Name="Lbl_Date"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                FontSize="Small"
+                Text="Fecha: ">
+            </Label>
+            <Button 
+                x:Name="Btn_Pagar"
+                Text="Pagar"
+                TextColor="White"
+                BackgroundColor="Teal"
+                Clicked="Btn_Pagar_Clicked">
             </Button>
             <Button 
                 x:Name="Btn_Volver"

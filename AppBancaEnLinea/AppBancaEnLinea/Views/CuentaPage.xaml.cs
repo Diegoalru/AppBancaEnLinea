@@ -15,6 +15,8 @@ namespace AppBancaEnLinea.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CuentaPage : ContentPage
     {
+        private Cuenta cuentaVieja = new Cuenta();
+
         public CuentaPage()
         {
             InitializeComponent();
@@ -45,66 +47,97 @@ namespace AppBancaEnLinea.Views
                     break;
             }
             Pkr_Moneda.SelectedItem = moneda;
+            this.cuentaVieja = cuenta;
         }
 
-        private void AgregarTapped(Object sender, System.EventArgs e)
+        private async void AgregarTapped(Object sender, System.EventArgs e)
         {
-            string moneda = string.Empty;
-            switch(Pkr_Moneda.SelectedItem.ToString())
+            try
             {
-                case "DOLARES":
-                    moneda = "DOL";
-                    break;
-                case "COLONES":
-                    moneda = "COL";
-                    break;
-                default:
-                    moneda = "EUR";
-                    break;
+                string moneda = string.Empty;
+                switch (Pkr_Moneda.SelectedItem.ToString())
+                {
+                    case "DOLARES":
+                        moneda = "DOL";
+                        break;
+                    case "COLONES":
+                        moneda = "COL";
+                        break;
+                    default:
+                        moneda = "EUR";
+                        break;
+                }
+
+                Cuenta cuenta = new Cuenta
+                {
+                    CUE_CODIGO = 1, // es autoincrement!!
+                    USU_CODIGO = App.repositorioUsuario.GetUsuario().USU_CODIGO,
+                    CUE_DESCRIPCION = Txt_Descripcion.Text,
+                    CUE_MONEDA = moneda,
+                    CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
+                    CUE_ESTADO = Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
+                };
+
+                bool resultado = await DisplayAlert("Cuenta", "¿Desea agregar la siguiente cuenta?\n" + cuenta.ToString(), "OK", "Cancel");
+                if (resultado)
+                {
+                    App.repositorioCuenta.AgregarCuenta(cuenta);
+                    await DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK");
+                    Limpiar();
+                }
             }
-
-            Cuenta cuenta = new Cuenta
+            catch (Exception)
             {
-                USU_CODIGO = 1,
-                CUE_CODIGO = 1,
-                CUE_DESCRIPCION = Txt_Descripcion.Text,
-                CUE_MONEDA = moneda,
-                CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
-                CUE_ESTADO = Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
-            };
-
-            App.repositorioCuenta.AgregarCuenta(cuenta);
-            DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK", "Cancel");
+                await DisplayAlert("Error", "Verifica que todos los datos esten completos.", "Ok");
+            }
         }
 
-        private void ActualizarTapped(Object sender, System.EventArgs e)
+        private async void ActualizarTapped(Object sender, System.EventArgs e)
         {
-            string moneda = string.Empty;
-            switch (Pkr_Moneda.SelectedItem.ToString())
+            try
             {
-                case "DOLARES":
-                    moneda = "DOL";
-                    break;
-                case "COLONES":
-                    moneda = "COL";
-                    break;
-                default:
-                    moneda = "EUR";
-                    break;
+                string moneda = string.Empty;
+                switch (Pkr_Moneda.SelectedItem.ToString())
+                {
+                    case "DOLARES":
+                        moneda = "DOL";
+                        break;
+                    case "COLONES":
+                        moneda = "COL";
+                        break;
+                    default:
+                        moneda = "EUR";
+                        break;
+                }
+
+                Cuenta cuentaNueva = new Cuenta
+                {
+                    USU_CODIGO = App.repositorioUsuario.GetUsuario().USU_CODIGO,
+                    CUE_CODIGO = Convert.ToInt32(Txt_Codigo.Text),
+                    CUE_DESCRIPCION = Txt_Descripcion.Text,
+                    CUE_MONEDA = moneda,
+                    CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
+                    CUE_ESTADO = Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
+                };
+
+                string cuentaAnterior = string.Format("Cuenta Anterior:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}",
+                    this.cuentaVieja.CUE_DESCRIPCION, this.cuentaVieja.CUE_MONEDA, this.cuentaVieja.CUE_SALDO, this.cuentaVieja.CUE_ESTADO);
+                string cuentaActual = string.Format("Cuenta Actualizada:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}",
+                    cuentaNueva.CUE_DESCRIPCION, cuentaNueva.CUE_MONEDA, cuentaNueva.CUE_SALDO, cuentaNueva.CUE_ESTADO);
+
+                bool resultado = await DisplayAlert("Verifique los datos", cuentaAnterior + cuentaActual + "\n¿Desea Continuar?", "OK", "Cancel");
+
+                if (resultado)
+                {
+                    await DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK");
+                    App.repositorioCuenta.ActualizaCuenta(cuentaNueva);
+                    Application.Current.MainPage = new MainPage();
+                }
             }
-
-            Cuenta cuenta = new Cuenta
+            catch(Exception)
             {
-                USU_CODIGO = 1,
-                CUE_CODIGO = Convert.ToInt32(Txt_Codigo.Text),
-                CUE_DESCRIPCION = Txt_Descripcion.Text,
-                CUE_MONEDA = moneda,
-                CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
-                CUE_ESTADO = Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
-            };
-
-            App.repositorioCuenta.ActualizaCuenta(cuenta);
-            DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK", "Cancel");
+                await DisplayAlert("Error", "Verifica que todos los datos esten completos.", "Ok");
+            }
         }
 
 
@@ -113,6 +146,14 @@ namespace AppBancaEnLinea.Views
             Application.Current.MainPage = new MainPage();
         }
 
+        private void Limpiar()
+        {
+            Txt_Codigo.Text = "";
+            Txt_Descripcion.Text = "";
+            Txt_Saldo.Text = "";
+            Pkr_Estado.SelectedItem = 0;
+            Pkr_Moneda.SelectedItem = 0;
+        }
 
     }
 }

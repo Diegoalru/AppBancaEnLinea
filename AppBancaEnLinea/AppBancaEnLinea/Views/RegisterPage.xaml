@@ -7,40 +7,43 @@
             <Entry
                 x:Name="Txt_Identificacion"
                 Placeholder="Identificación"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
+                Keyboard="Telephone"
+                MaxLength="9"
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_Nombre"
                 Placeholder="Nombre"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_Username"
                 Placeholder="Usuario"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_Password"
                 Placeholder="Contraseña"
                 IsPassword="True"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_PasswordConfirm"
                 Placeholder="Contraseña"
                 IsPassword="True"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_Email"
                 Placeholder="Email"
-                HorizontalOptions="Center"
+                HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
+                Keyboard="Email"
                 FontSize="Small"></Entry>
             <DatePicker
                 x:Name="Pkr_Date"

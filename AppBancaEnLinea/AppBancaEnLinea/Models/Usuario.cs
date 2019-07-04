@@ -46,5 +46,12 @@ namespace AppBancaEnLinea.Models
         public Usuario(int code, string user)
         { this.USU_CODIGO = code; this.USU_USERNAME = user; }
         #endregion
+
+
+        public override string ToString()
+        {
+            return string.Format("Verifique los datos:\nCedula: {0}\nNombre: {1}\nUsuario: {2}\nEmail: {3}\n", USU_IDENTIFICACION, USU_NOMBRE, USU_USERNAME, USU_EMAIL);
+        }
+
     }
 }
