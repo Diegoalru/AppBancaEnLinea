@@ -188,8 +188,13 @@ namespace AppBancaEnLinea.Views
             App.repositorioServicio.AgregarServicio(servicioCNFL);
             App.repositorioServicio.AgregarServicio(servicioNetflix);
         }
+
         #endregion
 
+        private void Btn_PagoList_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new PagoPageList();
+        }
     }
 }
 

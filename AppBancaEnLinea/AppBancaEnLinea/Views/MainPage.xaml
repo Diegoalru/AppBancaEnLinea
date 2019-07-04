@@ -58,6 +58,14 @@
                     HorizontalOptions="Fill"
                     Clicked="PagarTapped">
             </Button>
+            <Button x:Name="Btn_PagoList"
+                    Text="Lista de Pagos"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    CornerRadius="10"
+                    HorizontalOptions="Fill"
+                    Clicked="Btn_PagoList_Clicked">
+            </Button>
             <Button x:Name="Btn_CerrarSesion"
                     Text="Cerrar Sesión"
                     TextColor="White"
