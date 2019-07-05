@@ -2,28 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="AppBancaEnLinea.LoginPage" 
-             BackgroundColor="Silver">
-    <ContentPage.Content>
+             BackgroundImage="JCH.jpg" >
+    <ContentPage.Content >
         <ScrollView>
             <StackLayout Orientation="Vertical" 
                          HorizontalOptions="Fill" 
                          VerticalOptions="Center" 
-                         Padding="30">
-                <Label Text="Bienvenido a Banco ULACIT" 
-                       HorizontalOptions="Center"></Label>
+                         Padding="30" AnchorY="30">
+				<Label Text="Bienvenido a Banco ULACIT" 
+                       HorizontalOptions="Center" TextColor="#F8F8F8" FontSize="Medium" FontAttributes="Bold"></Label>
                 <Entry x:Name="Txt_Username" 
                        Placeholder="Username" 
-                       HorizontalOptions="Center"></Entry>
+                       HorizontalOptions="Center" TextColor="#FFFFFF"></Entry>
                 <Entry x:Name="Txt_Password" 
                        IsPassword="True" 
                        Placeholder="Password" 
-                       HorizontalOptions="Center"></Entry>
-                <Button x:Name="Btn_Login" 
+                       HorizontalOptions="Center" TextColor="#FFFFFF"></Entry>
+				<Button x:Name="Btn_Login" 
                         Text="Iniciar Sesion" 
                         BorderColor="Navy" 
-                        BackgroundColor="Navy" 
-                        TextColor="Silver" 
-                        CornerRadius="10" 
+						BackgroundColor="Navy" 
+                        TextColor="#FFFFFF" 
+                       CornerRadius="10" 
                         Clicked="Login"></Button>
                 <Button x:Name="Btn_Register" 
                         Text="Registrarse" 
