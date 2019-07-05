@@ -5,7 +5,7 @@
     <ContentPage.Content>
 		<StackLayout Padding="30" VerticalOptions="Center">
 			<Label Text="Registro de Usuario" 
-             HorizontalOptions="Center" TextColor="#000000" FontSize="Medium" FontAttributes="Bold" Margin="40">
+             HorizontalOptions="Center" TextColor="#000000" FontSize="Large" FontAttributes="Bold" Margin="40">
 			</Label>
 			<Entry
                 x:Name="Txt_Identificacion"

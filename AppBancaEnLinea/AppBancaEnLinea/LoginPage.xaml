@@ -14,14 +14,16 @@
                        HorizontalOptions="Center" TextColor="White" FontSize="Large" FontAttributes="Bold" ></Label>
                 <Entry x:Name="Txt_Username" 
 					   HorizontalTextAlignment="Center"
-                       Placeholder="        Usuario        "
-                       HorizontalOptions="Center" TextColor="#C5C2C2" ></Entry>
+                       Placeholder="Usuario"
+                       HorizontalOptions="Fill"
+					   TextColor="#C5C2C2" ></Entry>
                 <Entry x:Name="Txt_Password" 
                        IsPassword="True"
 					   HorizontalTextAlignment="Center"
-                       Placeholder="     Contraseña     " 
+                       Placeholder="Contraseña" 
 					   Margin="0, 0, 0, 25"
-                       HorizontalOptions="Center" TextColor="#C5C2C2"  ></Entry>
+                       HorizontalOptions="Fill"
+					   TextColor="#C5C2C2" ></Entry>
 				<Button x:Name="Btn_Login" 
                         Text="Iniciar Sesion" 
 						Margin="30, 0"
