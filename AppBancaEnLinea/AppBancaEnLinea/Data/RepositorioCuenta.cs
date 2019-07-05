@@ -66,7 +66,7 @@ namespace AppBancaEnLinea.Data
             }
             catch (Exception e)
             {
-                StatusMessage = string.Format("SQLite: Error al eliminar  {0}. Error: {1}", cuenta.CUE_DESCRIPCION, e.Message);
+                StatusMessage = string.Format("SQLite: Error al eliminar  {0}.\nError: {1}", cuenta.CUE_DESCRIPCION, e.Message);
             }
         }
 

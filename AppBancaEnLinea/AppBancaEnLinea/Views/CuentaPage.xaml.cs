@@ -125,7 +125,7 @@ namespace AppBancaEnLinea.Views
                 string cuentaActual = string.Format("Cuenta Actualizada:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}",
                     cuentaNueva.CUE_DESCRIPCION, cuentaNueva.CUE_MONEDA, cuentaNueva.CUE_SALDO, cuentaNueva.CUE_ESTADO);
 
-                bool resultado = await DisplayAlert("Verifique los datos", cuentaAnterior + cuentaActual + "\n¿Desea Continuar?", "OK", "Cancel");
+                bool resultado = await DisplayAlert("Verifique los datos", cuentaAnterior +"\n"+ cuentaActual + "\n¿Desea Continuar?", "OK", "Cancel");
 
                 if (resultado)
                 {
