@@ -10,28 +10,28 @@
                          VerticalOptions="Center" 
                          Padding="30" AnchorY="30">
 				<Label Text="Bienvenido a Banco ULACIT" 
-                       HorizontalOptions="Center" TextColor="#F8F8F8" FontSize="Medium" FontAttributes="Bold"></Label>
+                       HorizontalOptions="Center" TextColor="#F8F8F8" FontSize="Large" FontAttributes="Bold" ></Label>
                 <Entry x:Name="Txt_Username" 
-                       Placeholder="Username" 
-                       HorizontalOptions="Center" TextColor="#FFFFFF"></Entry>
+                       Placeholder="            Usuario             " 
+                       HorizontalOptions="Center" TextColor="#C5C2C2" ></Entry>
                 <Entry x:Name="Txt_Password" 
                        IsPassword="True" 
-                       Placeholder="Password" 
-                       HorizontalOptions="Center" TextColor="#FFFFFF"></Entry>
+                       Placeholder="            Contraseña             " 
+                       HorizontalOptions="Center" TextColor="#C5C2C2"  ></Entry>
 				<Button x:Name="Btn_Login" 
                         Text="Iniciar Sesion" 
-                        BorderColor="Navy" 
-						BackgroundColor="Navy" 
-                        TextColor="#FFFFFF" 
+                        BorderColor="#252525" 
+						BackgroundColor="#FFFFFF" 
+                        TextColor="#0D0D0D" 
                        CornerRadius="10" 
                         Clicked="Login"></Button>
                 <Button x:Name="Btn_Register" 
-                        Text="Registrarse" 
-                        BorderColor="Navy"
-                        BackgroundColor="Navy" 
-                        TextColor="Silver"
+                        Text="¿No tiene una Cuenta?" 
+                        TextColor="#FFFFFF"
+						BorderColor="Transparent"
+						BackgroundColor="Transparent"
                         CornerRadius="10" 
-                        Clicked="Btn_Register_Clicked"></Button>
+                        Clicked="Btn_Register_Clicked" FontAttributes="Bold"></Button>
                 <!--<Button x:Name="Btn_Agregar" 
                         Text="Agregar Usuario" 
                         BorderColor="Navy" 

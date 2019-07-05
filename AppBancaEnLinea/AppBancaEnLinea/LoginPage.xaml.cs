@@ -24,7 +24,7 @@ namespace AppBancaEnLinea
 
         }
 
-        //Metodo de Login, ¡¡FUNCIONA!! pero ya no entiendo nada xD 
+        //Metodo de Login, ¡¡FUNCIONA!! 
         private void Login(object sender, EventArgs e)
         {
             //Guardamos los campos
