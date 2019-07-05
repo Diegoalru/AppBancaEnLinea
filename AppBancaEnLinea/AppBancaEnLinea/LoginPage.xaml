@@ -11,7 +11,10 @@
                          Padding="50" AnchorY="50">
 				<Label Text="Bienvenido a Banco ULACIT" 
 					   Margin="0, -50, 0, 50"
-                       HorizontalOptions="Center" TextColor="White" FontSize="Large" FontAttributes="Bold" ></Label>
+                       HorizontalOptions="Center"
+					   TextColor="White" 
+					   FontSize="25" 
+					   FontAttributes="Bold" ></Label>
                 <Entry x:Name="Txt_Username" 
 					   HorizontalTextAlignment="Center"
                        Placeholder="Usuario"
