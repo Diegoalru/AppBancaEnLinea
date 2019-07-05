@@ -3,8 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancaEnLinea.Views.RegisterPage">
     <ContentPage.Content>
-        <StackLayout Padding="30" VerticalOptions="Center">
-            <Entry
+		<StackLayout Padding="30" VerticalOptions="Center">
+			<Label Text="Registro de Usuarios" 
+             HorizontalOptions="Center" TextColor="#000000" FontSize="Medium" FontAttributes="Bold" Margin="-10, 40">
+			</Label>
+			<Entry
                 x:Name="Txt_Identificacion"
                 Placeholder="Identificación"
                 HorizontalOptions="Fill"

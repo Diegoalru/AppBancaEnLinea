@@ -5,7 +5,7 @@
              BackgroundImage="JCH.jpg" >
     <ContentPage.Content >
         <ScrollView>
-            <StackLayout Orientation="Vertical" 
+			<StackLayout Orientation="Vertical" 
                          HorizontalOptions="Fill" 
                          VerticalOptions="Center" 
                          Padding="30" AnchorY="30">
