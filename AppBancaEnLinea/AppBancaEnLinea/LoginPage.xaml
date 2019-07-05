@@ -8,26 +8,31 @@
 			<StackLayout Orientation="Vertical" 
                          HorizontalOptions="Fill" 
                          VerticalOptions="Center" 
-                         Padding="30" AnchorY="30">
+                         Padding="50" AnchorY="50">
 				<Label Text="Bienvenido a Banco ULACIT" 
-                       HorizontalOptions="Center" TextColor="#F8F8F8" FontSize="Large" FontAttributes="Bold" ></Label>
+					   Margin="0, -50, 0, 50"
+                       HorizontalOptions="Center" TextColor="White" FontSize="Large" FontAttributes="Bold" ></Label>
                 <Entry x:Name="Txt_Username" 
-                       Placeholder="            Usuario             " 
+					   HorizontalTextAlignment="Center"
+                       Placeholder="        Usuario        "
                        HorizontalOptions="Center" TextColor="#C5C2C2" ></Entry>
                 <Entry x:Name="Txt_Password" 
-                       IsPassword="True" 
-                       Placeholder="            Contraseña             " 
+                       IsPassword="True"
+					   HorizontalTextAlignment="Center"
+                       Placeholder="     Contraseña     " 
+					   Margin="0, 0, 0, 25"
                        HorizontalOptions="Center" TextColor="#C5C2C2"  ></Entry>
 				<Button x:Name="Btn_Login" 
                         Text="Iniciar Sesion" 
+						Margin="30, 0"
                         BorderColor="#252525" 
 						BackgroundColor="#FFFFFF" 
                         TextColor="#0D0D0D" 
-                       CornerRadius="10" 
-                        Clicked="Login"></Button>
+						CornerRadius="40" 
+                        Clicked="Login" FontAttributes="Bold"></Button>
                 <Button x:Name="Btn_Register" 
                         Text="¿No tiene una Cuenta?" 
-                        TextColor="#FFFFFF"
+                        TextColor="White"
 						BorderColor="Transparent"
 						BackgroundColor="Transparent"
                         CornerRadius="10" 
