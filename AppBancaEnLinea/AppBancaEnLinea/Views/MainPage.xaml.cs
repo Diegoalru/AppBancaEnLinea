@@ -26,7 +26,7 @@ namespace AppBancaEnLinea.Views
             InitializeComponent();
             RefrescarPantalla();//Muestra los datos en la lista
             CargaUser();//Muestra en un label el Usuario.
-            //CrearServicios();
+            CrearServicios();
         }
 
         public void CargaUser()
@@ -130,6 +130,10 @@ namespace AppBancaEnLinea.Views
         #endregion
 
         #region Pagos
+        private void Btn_PagoList_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new PagoPageList();
+        }
 
         /// <summary>
         /// Metodo que nos lleva a otro formulario, donde podremos pagar los servicios.
@@ -170,31 +174,46 @@ namespace AppBancaEnLinea.Views
         {
             Servicio servicioAYA = new Servicio()
             {
+                SER_CODIGO = 1,
                 SER_DESCRIPCION = "AyA",
                 SER_ESTADO = "A",
             };
             Servicio servicioCNFL = new Servicio()
             {
+                SER_CODIGO = 2,
                 SER_DESCRIPCION = "CNFL",
                 SER_ESTADO = "A",
             };
             Servicio servicioNetflix = new Servicio()
             {
+                SER_CODIGO = 3,
                 SER_DESCRIPCION = "Netflix",
                 SER_ESTADO = "A",
             };
 
-            App.repositorioServicio.AgregarServicio(servicioAYA);
-            App.repositorioServicio.AgregarServicio(servicioCNFL);
-            App.repositorioServicio.AgregarServicio(servicioNetflix);
+            List<Servicio> servicios = new List<Servicio>();
+            servicios.Add(servicioAYA);
+            servicios.Add(servicioCNFL);
+            servicios.Add(servicioNetflix);
+
+            try
+            {
+                for (int i = 0; i <= servicios.Count; i++)
+                {
+                    List<Servicio> item = App.repositorioServicio.ObtenerServicios();
+                    if (servicios[i].SER_CODIGO != item[i].SER_CODIGO)
+                    {
+                        App.repositorioServicio.AgregarServicio(servicios[i]);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
         }
 
         #endregion
 
-        private void Btn_PagoList_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new PagoPageList();
-        }
     }
 }
 
