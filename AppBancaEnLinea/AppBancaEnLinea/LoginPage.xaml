@@ -19,6 +19,7 @@
 					   HorizontalTextAlignment="Center"
                        Placeholder="Usuario"
                        HorizontalOptions="Fill"
+					   PlaceholderColor="#CFC9C9"
 					   TextColor="#C5C2C2" ></Entry>
                 <Entry x:Name="Txt_Password" 
                        IsPassword="True"
@@ -26,6 +27,7 @@
                        Placeholder="Contraseña" 
 					   Margin="0, 0, 0, 25"
                        HorizontalOptions="Fill"
+					   PlaceholderColor="#CFC9C9"
 					   TextColor="#C5C2C2" ></Entry>
 				<Button x:Name="Btn_Login" 
                         Text="Iniciar Sesion" 

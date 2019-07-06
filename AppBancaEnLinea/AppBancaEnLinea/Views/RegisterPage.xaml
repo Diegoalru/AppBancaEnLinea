@@ -21,13 +21,13 @@
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_Nombre"
-                Placeholder="Nombre"
+                Placeholder="Nombre Completo"
                 HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_Username"
-                Placeholder="Usuario"
+                Placeholder="Nombre de Usuario"
                 HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Small"></Entry>
@@ -47,7 +47,7 @@
                 FontSize="Small"></Entry>
             <Entry
                 x:Name="Txt_Email"
-                Placeholder="Email"
+                Placeholder="Correo Eléctronico"
                 HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 Keyboard="Email"

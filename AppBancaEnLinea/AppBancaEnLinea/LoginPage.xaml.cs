@@ -17,8 +17,8 @@ namespace AppBancaEnLinea
         public LoginPage()
         {
             InitializeComponent();
-            Txt_Username.Text = "diegoalru";
-            Txt_Password.Text = "qwerty";
+            //Txt_Username.Text = "diegoalru";
+            //Txt_Password.Text = "qwerty";
             //Txt_Username.Text = "";
             //Txt_Password.Text = "";
 
