@@ -4,18 +4,30 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
             <Label x:Name="Lbl_Username" Text="" HorizontalOptions="End"></Label>
-            <Button Text="Agregar Cuenta" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
+			<!-- <Button Text="Agregar Cuenta" BorderColor="Navy" BackgroundColor="Navy" TextColor="Silver" CornerRadius="10"
                 Clicked="Btn_AgregarCuentaDefault">
-            </Button>
-            <Button Text="Actualizar"
-                    BorderColor="Navy" 
-                    BackgroundColor="Navy" 
-                    TextColor="Silver" 
-                    CornerRadius="10"
-                    Clicked="Btn_RefrescarPantalla"
-                    Margin="40, 0"> 
-            </Button>
-            <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default">
+            </Button> --><Grid VerticalOptions="Center">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Button Grid.Column="0"                     
+					Text="Pagar Servicios"
+                    TextColor="White"
+                    BackgroundColor="DarkBlue"
+                    CornerRadius="50"
+                    HorizontalOptions="Fill"
+                    Clicked="PagarTapped"/>
+				<Button Grid.Column="1"                     
+					Text="Lista de Pagos"
+                    TextColor="White"
+                    BackgroundColor="DarkBlue"
+                    CornerRadius="50"
+                    HorizontalOptions="Fill"
+                    Clicked="Btn_PagoList_Clicked"/>
+			</Grid>
+			
+			
+            <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default" Margin="0, 20">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
@@ -25,55 +37,68 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
-            <Button x:Name="Btn_Agregar"
-                    Text="Agregar"
+            </ListView>           
+    
+			<Grid VerticalOptions="Center" >
+				<Grid.RowDefinitions>
+					<RowDefinition Height="AUTO"  />
+				</Grid.RowDefinitions>
+				<Button Grid.Column="0"                     
+                    Text="+"
                     TextColor="White"
+					FontAttributes="Bold"
+					FontSize="22"
                     BackgroundColor="Green"
-                    HorizontalOptions="Fill"
-                    CornerRadius="10"
-                    Clicked="AgregarTapped">
-            </Button>
-            <Button x:Name="Btn_Modifcar" 
-                    Text="Modificar"
-                    TextColor="White" 
-                    BackgroundColor="Navy"
-                    CornerRadius="10"
-                    HorizontalOptions="Fill"
-                    Clicked="ModificarTapped">
-            </Button>
-            <Button x:Name="Btn_Eliminar"
-                    Text="Eliminar"
+                    HorizontalOptions="Start"
+                    CornerRadius="50"
+					Margin="15, 0"
+                    Clicked="AgregarTapped"/>
+				<Button Grid.Column="1" 
+					Image="tt.png"
+						Padding="15"
+                    TextColor="Black" 
+                    BackgroundColor="White"
+                    HorizontalOptions="Center"
+					Margin="15, 0"
+					CornerRadius="50"
+                    Clicked="ModificarTapped"/>
+				<Button Grid.Column="2"                     
+                    Text="-"
+					FontAttributes="Bold"
+					FontSize="24"
+                    TextColor="Black"
+                    BackgroundColor="White"
+                    CornerRadius="50"
+					Margin="15, 0"
+                    HorizontalOptions="End"
+                    Clicked="EliminarTapped"/>
+				<Button Grid.Column="3"                     
+					Text="A"
+                    BorderColor="Navy" 
+                    BackgroundColor="Navy" 
+                    TextColor="Silver" 
+                    CornerRadius="30"
+					HorizontalOptions="End"
+                    Clicked="Btn_RefrescarPantalla"
+                    Margin="15, 0"/>
+
+			</Grid>
+			<Grid VerticalOptions="Fill" Margin="-100, 10" Padding="0, 10">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto" />
+				</Grid.RowDefinitions>
+				<Button Grid.Column="0" 
+					Text="CERRAR SESIÓN"
                     TextColor="White"
-                    BackgroundColor="Gray"
-                    CornerRadius="10"
-                    HorizontalOptions="Fill"
-                    Clicked="EliminarTapped">
-            </Button>
-            <Button x:Name="Btn_pagos"
-                    Text="Pagar Servicios"
-                    TextColor="White"
-                    BackgroundColor="Teal"
-                    CornerRadius="10"
-                    HorizontalOptions="Fill"
-                    Clicked="PagarTapped">
-            </Button>
-            <Button x:Name="Btn_PagoList"
-                    Text="Lista de Pagos"
-                    TextColor="White"
-                    BackgroundColor="Teal"
-                    CornerRadius="10"
-                    HorizontalOptions="Fill"
-                    Clicked="Btn_PagoList_Clicked">
-            </Button>
-            <Button x:Name="Btn_CerrarSesion"
-                    Text="Cerrar Sesión"
-                    TextColor="White"
-                    BackgroundColor="Maroon"
-                    HorizontalOptions="Fill"
-                    CornerRadius="10"
-                    Clicked="CerrarSesionTapped">
-            </Button>
-        </StackLayout>
+                    BackgroundColor="DarkRed"
+                    HorizontalOptions="FillAndExpand"
+                    CornerRadius="30"
+					Margin="0, 0"
+                    Clicked="CerrarSesionTapped"/>
+			</Grid>
+			
+
+
+		</StackLayout>
     </ContentPage.Content>
 </ContentPage>
