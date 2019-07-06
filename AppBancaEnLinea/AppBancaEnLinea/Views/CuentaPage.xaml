@@ -4,7 +4,14 @@
              x:Class="AppBancaEnLinea.Views.CuentaPage">
     <ContentPage.Content>
         <StackLayout Padding="30" VerticalOptions="Center">
-            <Entry x:Name="Txt_Codigo"
+			<Label Text="Cuenta Bancaria" 
+				HorizontalOptions="Center" 
+				TextColor="#000000" 
+				FontSize="26"
+				TextDecorations="Underline"
+				FontAttributes="Bold" Margin="40">
+			</Label>
+			<Entry x:Name="Txt_Codigo"
                    Placeholder="Ingrese el código"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill"
@@ -14,8 +21,9 @@
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill"
                    FontSize="Small"></Entry>
-            <Picker Title="Seleccione un estado"
+            <Picker Title="Seleccione un tipo de moneda"
                     x:Name="Pkr_Moneda"
+					HorizontalOptions="Fill"
                     FontSize="Small">
                 <Picker.Items>
                     <x:String>DOLARES</x:String>
@@ -23,15 +31,17 @@
                     <x:String>EUROS</x:String>
                 </Picker.Items>
             </Picker>
-            <Entry x:Name="Txt_Saldo"
+			<Entry x:Name="Txt_Saldo"
                    Placeholder="Ingrese el saldo"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill"
                    FontSize="Small"></Entry>
-            
-            <Picker Title="Seleccione un estado"
+
+			<Picker Title="Seleccione un estado"
                     x:Name="Pkr_Estado"
-                    FontSize="Small">
+                    FontSize="Small"
+					Margin="0, 0, 0, 50"
+					>
                 <Picker.Items>
                     <x:String>Activo</x:String>
                     <x:String>Inactivo</x:String>
@@ -41,15 +51,21 @@
             <Button x:Name="Btn_Agregar"
                     Text="Agregar"
                     TextColor="White"
-                    BackgroundColor="Teal"
+					Margin="10, 0"
+					CornerRadius="30"
+                    BackgroundColor="Black"
                     Clicked="AgregarTapped"></Button>
             <Button x:Name="Btn_Modificar"
                     Text="Modificar"
                     TextColor="White"
-                    BackgroundColor="Teal"
+					CornerRadius="30"
+					Margin="10, 0"
+                    BackgroundColor="Black"
                     Clicked="ActualizarTapped"></Button>
             <Button Text="Regresar"
                     TextColor="White"
+					CornerRadius="30"
+					Margin="10, 0"
                     BackgroundColor="Teal"
                     Clicked="RegresarTapped"></Button>
             

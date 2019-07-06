@@ -4,7 +4,14 @@
              x:Class="AppBancaEnLinea.Views.PagoPageList">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
-            <Label
+			<Label Text="Pagos Realizados" 
+				HorizontalOptions="Center" 
+				TextColor="#000000" 
+				FontSize="26"
+				TextDecorations="Underline"
+				FontAttributes="Bold" Margin="40">
+			</Label>
+			<Label
                 x:Name="Lbl_Title"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"/>
@@ -24,6 +31,7 @@
                 Text="Regresar"
                 TextColor="White"
                 BackgroundColor="Teal"
+				CornerRadius="30"
                 Clicked="Btn_Regresar_Clicked">
             </Button>
         </StackLayout>

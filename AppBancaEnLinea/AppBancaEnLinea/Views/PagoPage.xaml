@@ -4,7 +4,14 @@
              x:Class="AppBancaEnLinea.Views.PagoPage">
     <ContentPage.Content>
         <StackLayout Padding="30" VerticalOptions="Center">
-            <Picker x:Name="Pkr_Servicios"
+			<Label Text="Pago de Servicios" 
+				HorizontalOptions="Center" 
+				TextColor="#000000" 
+				FontSize="26"
+				TextDecorations="Underline"
+				FontAttributes="Bold" Margin="40">
+			</Label>
+			<Picker x:Name="Pkr_Servicios"
                     Title="Seleccione un servicio"
                     FontSize="Small"
                     ItemDisplayBinding="{Binding SER_DESCRIPCION}">
@@ -27,20 +34,25 @@
                 HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Small"
+				Margin="0,0,0,40"
                 Text="Fecha: ">
             </Label>
             <Button 
                 x:Name="Btn_Pagar"
                 Text="Pagar"
                 TextColor="White"
-                BackgroundColor="Teal"
+				CornerRadius="30"
+                BackgroundColor="Green"
+				Margin="10, 0"
                 Clicked="Btn_Pagar_Clicked">
             </Button>
             <Button 
                 x:Name="Btn_Volver"
                 Text="Regresar"
                 TextColor="White"
+				CornerRadius="30"
                 BackgroundColor="Teal"
+				Margin="10, 0"
                 Clicked="Btn_Volver_Clicked">
             </Button>
         </StackLayout>
