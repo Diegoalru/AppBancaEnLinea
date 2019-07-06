@@ -32,7 +32,7 @@
 						Margin="30, 0"
                         BorderColor="#252525" 
 						BackgroundColor="#FFFFFF" 
-                        TextColor="#0D0D0D" 
+                        TextColor="Green"
 						CornerRadius="40" 
                         Clicked="Login" FontAttributes="Bold"></Button>
                 <Button x:Name="Btn_Register" 

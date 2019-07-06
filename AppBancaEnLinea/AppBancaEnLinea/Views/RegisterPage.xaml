@@ -5,7 +5,11 @@
     <ContentPage.Content>
 		<StackLayout Padding="30" VerticalOptions="Center">
 			<Label Text="Registro de Usuario" 
-             HorizontalOptions="Center" TextColor="#000000" FontSize="Large" FontAttributes="Bold" Margin="40">
+				HorizontalOptions="Center" 
+				TextColor="#000000" 
+				FontSize="26"
+				TextDecorations="Underline"
+				FontAttributes="Bold" Margin="40">
 			</Label>
 			<Entry
                 x:Name="Txt_Identificacion"
@@ -49,7 +53,7 @@
                 Keyboard="Email"
                 FontSize="Small"
 				Margin="0, 0, 0, 20"></Entry>
-			<Label Text="Fecha de Creación:"
+			<Label Text="Fecha de Nacimiento"
 				HorizontalOptions="Center"   
 			></Label>
             <DatePicker
@@ -58,13 +62,17 @@
 				Margin="0, 0, 0, 20"></DatePicker>
             <Button
                 x:Name="Btn_Register"
-                Text="Registrar"
-                CornerRadius="10"
+                Text="Crear Cuenta"
+                CornerRadius="30"
+				TextColor="White"
+				BackgroundColor="Green"
                 Clicked="Btn_Register_Clicked"></Button>
             <Button 
                 x:Name="Btn_Volver"
-                Text="Volver"
-                CornerRadius="10"
+                Text="Regresar"
+                CornerRadius="30"
+				TextColor="White"
+				BackgroundColor="Gray"
                 Clicked="Btn_Volver_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
